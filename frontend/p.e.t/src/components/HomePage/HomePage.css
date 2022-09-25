@@ -1,0 +1,51 @@
+.carouselImg{
+    height: 400px;
+    width: 100%;
+}
+
+.homePageContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+p{
+    margin: 0px;
+}
+h4{
+    margin: 0px;
+}
+
+.infoDiv{
+    display: flex;
+    align-items: center;
+    width: 440px;
+    height: 100px;
+    padding-left: 20px;
+}
+
+.petText{
+    font-family: 'Calibri';
+    font-style: normal;
+}
+
+.blue{
+   color: #7092BF;
+}
+
+.infoTitle{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.infoDescription{
+    font-weight: 700;
+font-size: 16px;
+line-height: 20px;
+}
+
+.storeInformation{
+    display: flex;
+    align-items: center;
+    height: 300px;
+}

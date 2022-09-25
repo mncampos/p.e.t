@@ -1,0 +1,89 @@
+.loginContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.loginForm {
+    width: 50%;
+    padding-left: 80px;
+    padding-top: 145px;
+}
+
+.loginBgImg {
+    width: 531px;
+    height: 735px;
+}
+
+.dogsLogin {
+    width: 100%;
+    height: 100%;
+}
+
+.formTitle {
+    display: flex;
+    align-items: center;
+}
+
+.pawLogoMedium {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 40px;
+}
+
+.headerTitle {
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.blue {
+    color: #7092BF;
+}
+
+.inputBar {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputBar {
+    height: 50px;
+    width: 100%;
+    border: 1px solid #7092BF;
+    border-radius: 3px;
+    padding-left: 20px;
+}
+
+.inputBars {
+    margin-bottom: 30px;
+}
+
+.inputLabel {
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.inputBar {
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.inputBar:placeholder-shown {
+    color: rgba(112, 146, 191, 0.5);
+}
+
+.loginButtons{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.loginButton{
+    margin: 20px;
+}

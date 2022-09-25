@@ -1,0 +1,28 @@
+.petFooter{
+    display: flex;
+    align-items: center;
+    height: 115px;
+    width: 100%;
+    background: #7092BF;
+
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+.smallIcon{
+    width: 24px;
+    height: 23px;
+}
+
+.petText{
+    font-family: 'Calibri';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+margin-left: 7px;
+}
+
+.white{
+    color: #FFFFFF;
+}

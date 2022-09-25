@@ -1,0 +1,62 @@
+.navbarContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFFBBF;
+    height: 115px;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+.buttonsDiv{
+    display: flex;
+    justify-content: space-between;
+    width: 22%;
+}
+
+.petButton{
+    width: 175px;
+    height: 47px;
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    border: 2px solid #7092BF;
+    border-radius: 3px;
+    cursor:pointer;
+}
+
+.petButton:hover{
+    color: black;
+}
+
+.transparent{
+    background: rgba(0, 0, 0, 0);
+    color: #7092BF; 
+}
+
+.opaque{
+ background: #7092BF;
+ color: #FFFF;
+}
+
+.pataLogo{
+    width: 60px;
+    height: 58px;
+}
+
+.logo{
+    display: flex;
+}
+
+.appName{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #7092BF;
+
+}
+
+.clickableLogo{
+    display: flex;
+    text-decoration: none;
+}
