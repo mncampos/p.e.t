@@ -1,0 +1,48 @@
+.userBarContainer{
+    width: 100%;
+    height: 65px;
+    background: #7092BF;
+    display: flex;
+    align-items: center;
+    padding-left: 70px;
+    
+}
+
+
+.barItemIcon{
+    align-self: center;
+    margin-right: 12px;
+}
+
+.barItem{
+    display: flex;
+
+}
+
+.small{
+    height: 30px;
+    width: 30px;
+}
+
+.white {
+    
+}
+
+.itemName{
+    
+font-family: 'Calibri';
+font-style: normal;
+font-weight: 400;
+font-size: 26px;
+line-height: 32px;
+color: #FFFF;
+}
+
+.itemLink{
+    text-decoration: none   ;
+}
+
+.barSeparator{
+    margin-left: 34px;
+    margin-right: 34px;
+}

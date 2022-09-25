@@ -1,0 +1,32 @@
+.myPetsHeader{
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+.pageTitle{
+    font-family: 'Calibri';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 39px;
+}
+
+.boneLogoMedium{
+    margin-bottom: 20px;
+}
+
+
+.petCards{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.pageContainer{
+    min-height: 70vh;
+}

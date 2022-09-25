@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext} from "react";
 import logo from "../../assets/pataIcon.png";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
@@ -8,11 +8,6 @@ import LogOut from "../LogOut/LogOut";
 export default function Navbar() {
   const userContext = useContext(UserContext);
   
-  useEffect( () => {
-    
-  })
-
-
   return (
     <div className="navbarContainer">
       <div className="logo">

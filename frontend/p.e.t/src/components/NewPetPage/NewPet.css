@@ -1,0 +1,28 @@
+.pageDetailedContainer {
+    background: #FFFFFF;
+    box-shadow: -4px 4px 20px -4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    height: 500px;
+    margin: 70px;
+    padding: 80px;
+}
+
+.petBar{
+    width: 560px;
+}
+
+.newPetForm{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.line{
+    opacity: 0.2;
+border: 2px solid #7092BF;
+transform: rotate(0deg);
+width: 100%;
+margin-top: 64px;
+margin-bottom: 30px;
+}
