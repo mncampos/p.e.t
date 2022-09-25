@@ -10,26 +10,25 @@ import LogOut from "./components/LogOut/LogOut";
 import UserBar from "./components/NavigationBar/UserBar";
 import MyPetsPage from "./components/MyPetsPage/MyPetsPage";
 import NewPet from "./components/NewPetPage/NewPet";
+import {ProtectedRoute} from "./ProtectedRoutes";
 
 export const UserContext = createContext({});
 let isUserLoggedIn = false;
 
 function App() {
   const [userSession, setUserSession] = useState(true);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchUserAuth = async () => {
       try {
-        setLoading(true);
         const res = await fetch('/api/isAuth');
-        if (!res.ok) return setLoading(false);
+        if (!res.ok) return;
 
         setUserSession(await res.json());
         isUserLoggedIn = true;
-        setLoading(false);
+       
       } catch (error) {
-        setLoading(false);
+        
         console.error("Error fetching auth info.", error);
         return;
       }
@@ -45,10 +44,9 @@ function App() {
         <Route path='/' element={ <HomePage/>} />
         <Route path='/login' element={ <LoginPage />} />
         <Route path='/signin' element={<RegisterPage />} />
-        <Route path='/logout' element={<LogOut /> } />
-        <Route path='/myPets' element={<MyPetsPage />} />
-        <Route path='/newPet' element={<NewPet/>}/>
-        {loading? <>loading...</> : <>carregado</>}
+        <Route path='/logout' element={ <ProtectedRoute><LogOut /> </ProtectedRoute>} />
+        <Route path='/myPets' element={<ProtectedRoute><MyPetsPage /> </ProtectedRoute>} />
+        <Route path='/newPet' element={<ProtectedRoute><NewPet/> </ProtectedRoute>}/>
       </Routes>
       <Footer/>
     </UserContext.Provider>
