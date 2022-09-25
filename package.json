@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "Backend API for P.E.T application",
+  "description": "Backend API for PE.T application",
   "main": "index.js",
   "scripts": {
     "start":"node index.js",
