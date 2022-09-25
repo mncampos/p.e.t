@@ -44,12 +44,14 @@ app.use(cors())
 app.use(express.json())
 app.use(express.static(path.join(__dirname, 'build')));
 
+
+// ROUTERS
+app.use('/api', loginRouter)
+
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-// ROUTERS
-app.use('/api', loginRouter)
 
 // START SERVER
 app.listen(port, () => {
