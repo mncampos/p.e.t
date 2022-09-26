@@ -1,8 +1,29 @@
 const userSchema = require("../models/userSchema");
+const petSchema = require("../models/petSchema.js");
 const bcrypt = require("bcrypt");
 const express = require("express");
 const { db } = require("../models/userSchema");
 const router = express.Router();
+
+
+router.post("/addPet", async (req, res) => {
+  const {name, age, weight, specie, owner} = req.body;
+  if (!name || !age || !weight || !specie)
+    return res.status(400).json({msg:"Please complete all fields before submitting."});
+  const newPet = new petSchema({name, age, specie, weight, owner});
+  const newPetRes = await newPet.save();
+
+  if(newPetRes)
+    return res.status(200).json({msg : "Pet is succesfully saved on the database."});
+})
+
+router.post("/getPets", async (req, res) => {
+    const {owner} = req.body;
+    petSchema.find({owner}).lean().exec(function(err,docs) {
+      if(!err)
+      return res.status(200).json(docs);
+    });
+})
 
 router.post("/register", async (req, res) => {
   const { email, password, userType, address, name } = req.body;
