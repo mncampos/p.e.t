@@ -61,7 +61,7 @@ export default function NewPet() {
       <div className="pageDetailedContainer">
         <div className="formTitle">
           <img className="boneLogoMedium" src={boneIcon} alt="paw" />
-          <h3 className="pageTitle blue">Log In</h3>
+          <h3 className="pageTitle blue">New Pet</h3>
         </div>
         <form className="newPetForm" onSubmit={onSubmit} id="formNewPet">
           <div className="inputBars newPetBars">

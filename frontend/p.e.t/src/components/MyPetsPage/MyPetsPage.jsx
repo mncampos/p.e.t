@@ -38,7 +38,10 @@ export default function MyPetsPage() {
     for(let i = 0; i < pets.length; i++) {
       cards.push(<PetCard key={i} name={pets[i].name} age={pets[i].age} weight={pets[i].weight} specie={pets[i].specie}/>);
     }
-    return cards;
+
+    if(cards.length === 0)
+      return (<h1>You don't have any pets on the database. Please, add one.</h1>)
+      else return cards;
   }
   
 
@@ -47,7 +50,7 @@ export default function MyPetsPage() {
     <div className="myPetsHeader">
       <div className="formTitle">
         <img className="boneLogoMedium" src={boneIcon} alt="paw" />
-        <h3 className="pageTitle blue">Log In</h3>
+        <h3 className="pageTitle blue">My Pets</h3>
       </div>
       <div className="headerButton">
         <Link to='/newPet'>

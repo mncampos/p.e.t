@@ -6,6 +6,7 @@ import bg2 from '../../assets/background-frame2.jpg';
 import heartIcon from '../../assets/heartPawIcon.png'
 import secureIcon from '../../assets/secureDogIcon.png'
 import shopIcon from '../../assets/shopIcon.png'
+import bg3 from '../../assets/background-frame3.png';
 
 
 import './HomePage.css'
@@ -17,6 +18,9 @@ export default function HomePage(){
         },
         {
             image: bg2
+        },
+        {
+            image: bg3
         }
     ]
 

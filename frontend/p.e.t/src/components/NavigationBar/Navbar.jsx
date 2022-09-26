@@ -7,7 +7,12 @@ import LogOut from "../LogOut/LogOut";
 
 export default function Navbar() {
   const userContext = useContext(UserContext);
-  
+  var userName = "";
+
+  if(userContext.email){
+    const firstName = userContext.name.split(" ");
+    userName = firstName[0];
+  }
   return (
     <div className="navbarContainer">
       <div className="logo">
@@ -28,7 +33,7 @@ export default function Navbar() {
       ) : (
         <div className="buttonsDiv">
             <LogOut/>
-          <button className="petButton transparent">{userContext.name}</button>
+          <button className="petButton transparent">{userName}</button>
         </div>
       )}
     </div>
