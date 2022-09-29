@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import "./NewPet.css";
+import "../RegisterService/RegisterService.css"
 import boneIcon from "../../assets/boneIcon.png";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router";
@@ -94,22 +95,25 @@ export default function NewPet() {
             <label className="inputLabel blue" htmlFor="specie">
               Specie
             </label>
-            <select
-              className="inputBar petBar selectBar"
-              id="specie"
-              onChange={(e) => updateForm({ specie: e.target.value })}
-              value={form.specie}
-              name="Specie"
-            >
-              <option disabled hidden value="">
-                Choose an Specie
-              </option>
-              <option value="Dog">Dog</option>
-              <option value="Cat">Cat</option>
-              <option value="Bird">Bird</option>
-              <option value="Horse">Horse</option>
-              <option value="Other">Other</option>
-            </select>
+            <div className="selectDiv">
+              <select
+                className="inputBar petBar selectBar"
+                id="specie"
+                onChange={(e) => updateForm({ specie: e.target.value })}
+                value={form.specie}
+                name="Specie"
+                required
+              >
+                <option disabled hidden value="">
+                  Choose an Specie
+                </option>
+                <option value="Dog">Dog</option>
+                <option value="Cat">Cat</option>
+                <option value="Bird">Bird</option>
+                <option value="Horse">Horse</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
           </div>
           <div className="inputBars newPetBars">
             <label className="inputLabel blue" htmlFor="weight">

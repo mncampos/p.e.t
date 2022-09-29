@@ -11,6 +11,8 @@ import UserBar from "./components/NavigationBar/UserBar";
 import MyPetsPage from "./components/MyPetsPage/MyPetsPage";
 import NewPet from "./components/NewPetPage/NewPet";
 import {ProtectedRoute} from "./ProtectedRoutes";
+import RegisterService from "./components/RegisterService/RegisterService";
+import ServicesHistory from "./components/ServicesHistory/ServicesHistory";
 
 export const UserContext = createContext({});
 let isUserLoggedIn = false;
@@ -47,6 +49,8 @@ function App() {
         <Route path='/logout' element={ <ProtectedRoute><LogOut /> </ProtectedRoute>} />
         <Route path='/myPets' element={<ProtectedRoute><MyPetsPage /> </ProtectedRoute>} />
         <Route path='/newPet' element={<ProtectedRoute><NewPet/> </ProtectedRoute>}/>
+        <Route path='/registerService' element={ <RegisterService/>} />
+        <Route path='/servicesHistory' element={ <ServicesHistory/>} />
       </Routes>
       <Footer/>
     </UserContext.Provider>

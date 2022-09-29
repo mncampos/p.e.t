@@ -1,0 +1,9 @@
+.servicesHistoryHeader {
+    display: flex;
+    margin: 50px 0;
+    justify-content: space-between;
+}
+
+.servicesHistoryHeaderInfo {
+    display: flex;
+}

@@ -40,7 +40,7 @@ export default function MyPetsPage() {
     }
 
     if(cards.length === 0)
-      return (<h1>You don't have any pets on the database. Please, add one.</h1>)
+      return (<h1 className="blue">You don't have any pets on the database. Please, add one.</h1>)
       else return cards;
   }
   
