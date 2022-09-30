@@ -1,0 +1,13 @@
+.delegateServiceDropDownBar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.delegateServiceDropDownBarUnit {
+    display: flex;
+    flex-direction: column;
+}
+
+.margemFechaPagina {
+    margin-bottom: 190px;
+}

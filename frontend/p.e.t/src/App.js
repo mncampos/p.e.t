@@ -13,6 +13,8 @@ import NewPet from "./components/NewPetPage/NewPet";
 import {ProtectedRoute} from "./ProtectedRoutes";
 import RegisterService from "./components/RegisterService/RegisterService";
 import ServicesHistory from "./components/ServicesHistory/ServicesHistory";
+import DelegateService from "./components/DelegateService/DelegateService";
+import EmployeeServices from "./components/EmployeeServices/EmployeeServices";
 
 export const UserContext = createContext({});
 let isUserLoggedIn = false;
@@ -51,6 +53,8 @@ function App() {
         <Route path='/newPet' element={<ProtectedRoute><NewPet/> </ProtectedRoute>}/>
         <Route path='/registerService' element={ <RegisterService/>} />
         <Route path='/servicesHistory' element={ <ServicesHistory/>} />
+        <Route path='/delegateService' element={ <DelegateService/>} />
+        <Route path='/employeeServices' element={ <EmployeeServices/>} />
       </Routes>
       <Footer/>
     </UserContext.Provider>
