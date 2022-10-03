@@ -1,9 +1,11 @@
 import React from 'react';
 import pataIcon from '../../../assets/pataIcon.png'
+import { Link } from 'react-router-dom'
 import './petCard.css';
 
 export default function PetCard(props){
     return(
+        <Link to='/registerService' state={ {petInfo: props }}>
         <div className="petCard">
             <div className="petPicture">
                 <img className="pic" src={pataIcon} alt='petPicture'/>
@@ -15,5 +17,6 @@ export default function PetCard(props){
                 <p>Weight: <span className="petProps">{props.weight}</span> Kg</p>
             </div>
         </div>
+        </Link>
     );
 }

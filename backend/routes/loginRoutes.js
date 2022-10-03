@@ -1,9 +1,15 @@
 const userSchema = require("../models/userSchema");
 const petSchema = require("../models/petSchema.js");
+const procedureSchema = require("../models/procedureSchema");
 const bcrypt = require("bcrypt");
 const express = require("express");
 const { db } = require("../models/userSchema");
 const router = express.Router();
+
+const procedureManager = "Richard Leal";
+const procedureWorker1 = "Jorge"; // Resto
+const procedureWorker2 = "Orlando"; // Responsável por consulta médica, exame de sangue, tratamento dentário
+const procedureWorker3 = "Xuxa"; // Responsável por banho ou tosa
 
 
 router.post("/addPet", async (req, res) => {
@@ -15,6 +21,36 @@ router.post("/addPet", async (req, res) => {
 
   if(newPetRes)
     return res.status(200).json({msg : "Pet is succesfully saved on the database."});
+})
+
+router.post("/registerProcedure", async (req, res) => {
+  const {name, pet, petOwner, petOwnerEmail} = req.body;
+  const procedureStartDate = Date.now();
+  let procedureWorker = '';
+
+  if(name === 'Banho' || name === 'Tosa')
+    procedureWorker = procedureWorker3;
+  else if(name === 'Tratamento Dentário' || name === 'Exame de Sangue' || name === 'Exame Médico')
+    procedureWorker = procedureWorker2;
+    else procedureWorker = procedureWorker1;
+
+  const procedureState = 'Pending Approval';
+  
+  const newProcedure = new procedureSchema({name, pet, petOwner, petOwnerEmail, procedureManager, procedureWorker, procedureStartDate, procedureState});
+  const newProcedureRes = await newProcedure.save();
+
+  if(newProcedureRes)
+    return res.status(200).json({msg : "Procedure is succesfully saved on the database."});
+
+})
+
+router.post("/getProcedures", async (req, res) => {
+  const { owner, pet} = req.body;
+  procedureSchema.find({pet: pet, petOwner: owner}).lean().exec(function(err, docs) {
+    if(!err)
+    return res.status(200).json(docs);
+    
+  })
 })
 
 router.post("/getPets", async (req, res) => {
@@ -83,6 +119,19 @@ router.delete('/logout', (req, res) => {
   } else {
     res.end();
   }
+});
+
+router.delete("/cancelProcedure", (req, res) => {
+  const {id} = req.body;
+  procedureSchema.findByIdAndDelete(id, function(err, docs) {
+    if (err){
+      res.status(400).json({msg:"Unable to delete procedure - not found."});
+    }
+    else{
+      res.status(200).json({msg:"Procedure canceled with success !"});
+    }
+  })
+
 });
 
 router.get('/isAuth', async (req, res) => {
