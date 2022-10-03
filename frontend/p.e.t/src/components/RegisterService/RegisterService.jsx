@@ -154,7 +154,7 @@ export default function RegisterService(){
                 </div>
 
                 <div className="petCardButton">
-                    <button className="petButton cardButton">Histórico de Procedimentos</button>
+                    <button className="petButton cardButton">Procedure History</button>
                 </div>
 
             </div>
@@ -165,27 +165,27 @@ export default function RegisterService(){
 
                     <img className="boneLogoMedium" src={boneIcon} alt="bone" />
 
-                    <p className="procedimentoHeaderText">Marcar Procedimento</p>
+                    <p className="procedimentoHeaderText">New Appointment</p>
 
                 </div>
 
                 <div className="procedimentoDropDownBar">
 
-                    <label className="inputLabel blue" htmlFor="cars">Procedimento</label>
+                    <label className="inputLabel blue" htmlFor="cars">Procedures</label>
 
                     <div className="selectDiv">
                         <form className="newProcedureForm" id="newProcedure" onSubmit={onSubmit}>
                         <select value={values.name} className="inputBar petBar selectBar" name="Procedimento"  onChange={(e) => updateForm({ name: e.target.value })} id="Procedimento" required>
-                            <option value="" disabled hidden>Procedimento</option>
-                            <option value="Tosa">Tosa</option>
-                            <option value="Banho">Banho</option>
-                            <option value="Tratamento Dentário">Tratamento dentário</option>
-                            <option value="Exame de Rotina">Exame de rotina</option>
-                            <option value="Raio-X">Raio-X</option>
-                            <option value="Passeio">Passeio</option>
-                            <option value="Exame de Sangue">Exame de Sangue</option>
-                            <option value="Vacinação">Vacinação</option>
-                            <option value="Consulta Médica">Consulta Médica</option>
+                            <option value="" disabled hidden>Procedures</option>
+                            <option value="Pet Grooming">Pet Grooming</option>
+                            <option value="Bath">Bath</option>
+                            <option value="Dental Care">Dental Care</option>
+                            <option value="Routine Exam">Routine Exam</option>
+                            <option value="X-Ray">X-Ray</option>
+                            <option value="Walk">Walk</option>
+                            <option value="Blood Test">Blood Test</option>
+                            <option value="Vaccination">Vaccination</option>
+                            <option value="Medical Appointment">Medical Appointment</option>
                         </select>
                         </form>
                     </div>
@@ -211,18 +211,18 @@ export default function RegisterService(){
 
                     <img className="boneLogoMedium" src={boneIcon} alt="bone" />
 
-                    <p className="procedimentoHeaderText">Cancelar Procedimento</p>
+                    <p className="procedimentoHeaderText">Cancel Procedure</p>
 
                 </div>
 
                 <div className="procedimentoDropDownBar">
 
-                    <label className="inputLabel blue" htmlFor="cars">Procedimento</label>
+                    <label className="inputLabel blue" htmlFor="cars">Procedures</label>
 
                     <div className="selectDiv">
                         <form id='deleteForm' onSubmit={onDelete}>
                         <select className="inputBar petBar selectBar" onChange={(e) => updateDeleteForm({_id: e.target.value})} name="Procedimento" id="Procedimento" required defaultValue={""}>
-                            <option value="" disabled hidden> Procedimentos </option>
+                            <option value="" disabled hidden> Procedures </option>
                             {createExistingProcedures()}
                         </select>
                         </form>

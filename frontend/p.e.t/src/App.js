@@ -7,14 +7,16 @@ import HomePage from "./components/HomePage/HomePage";
 import LoginPage from "./components/LoginPage/LoginPage";
 import RegisterPage from "./components/RegisterPage/RegisterPage";
 import LogOut from "./components/LogOut/LogOut";
-import UserBar from "./components/NavigationBar/UserBar";
 import MyPetsPage from "./components/MyPetsPage/MyPetsPage";
 import NewPet from "./components/NewPetPage/NewPet";
 import {ProtectedRoute} from "./ProtectedRoutes";
 import RegisterService from "./components/RegisterService/RegisterService";
 import ServicesHistory from "./components/ServicesHistory/ServicesHistory";
+import { EmployeeRoute } from "./EmployeeRoute";
 import DelegateService from "./components/DelegateService/DelegateService";
 import EmployeeServices from "./components/EmployeeServices/EmployeeServices";
+import SubBar from "./components/NavigationBar/SubBar";
+import ProceduresView from "./components/ManagerProceduresView/ProceduresView";
 
 export const UserContext = createContext({});
 let isUserLoggedIn = false;
@@ -43,7 +45,7 @@ function App() {
   return (
     <UserContext.Provider value={userSession}>
       <Navbar/>
-      {isUserLoggedIn? <UserBar/> : null}
+      {isUserLoggedIn? <SubBar/> : null}
       <Routes>
         <Route path='/' element={ <HomePage/>} />
         <Route path='/login' element={ <LoginPage />} />
@@ -51,10 +53,11 @@ function App() {
         <Route path='/logout' element={ <ProtectedRoute><LogOut /> </ProtectedRoute>} />
         <Route path='/myPets' element={<ProtectedRoute><MyPetsPage /> </ProtectedRoute>} />
         <Route path='/newPet' element={<ProtectedRoute><NewPet/> </ProtectedRoute>}/>
-        <Route path='/registerService' element={ <RegisterService/>} />
-        <Route path='/servicesHistory' element={ <ServicesHistory/>} />
-        <Route path='/delegateService' element={ <DelegateService/>} />
-        <Route path='/employeeServices' element={ <EmployeeServices/>} />
+        <Route path='/registerService' element={ <ProtectedRoute><RegisterService/></ProtectedRoute>} />
+        <Route path='/servicesHistory' element={ <ProtectedRoute><ServicesHistory/></ProtectedRoute>} />
+        <Route path='/delegateService' element={ <EmployeeRoute><DelegateService/></EmployeeRoute>} />
+        <Route path='/employeeServices' element={ <EmployeeRoute><EmployeeServices/></EmployeeRoute>} />
+        <Route path='/proceduresView' element={ <EmployeeRoute><ProceduresView/></EmployeeRoute>} />
       </Routes>
       <Footer/>
     </UserContext.Provider>

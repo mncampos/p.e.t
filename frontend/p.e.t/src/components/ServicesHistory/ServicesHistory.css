@@ -7,3 +7,7 @@
 .servicesHistoryHeaderInfo {
     display: flex;
 }
+
+.procedureCardsContainer{
+    display: flex;
+}

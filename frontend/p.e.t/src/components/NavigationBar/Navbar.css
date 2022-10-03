@@ -60,3 +60,17 @@
     display: flex;
     text-decoration: none;
 }
+
+.procedureCard{
+    border-color: #7092BF;
+    border-style: solid;
+}
+
+.procedureCardText{
+    
+font-family: 'Calibri';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+}

@@ -5,7 +5,9 @@ import pataIcon from '../../assets/pataWhite.png';
 import './UserBar.css';
 import lineIcon from '../../assets/lineIcon.png';
 import infoIcon from '../../assets/infoIcon.png';
-export default function UserBar(){
+
+
+export default function ManagerBar(){
 
     const userContext = useContext(UserContext);
 
@@ -13,8 +15,8 @@ export default function UserBar(){
         <div className="userBarContainer">
             <div className="barItem">
                 <img src={pataIcon} className="barItemIcon small" alt="pataIcon"/>
-                <Link className="itemLink" to='/myPets'>
-                    <h2 className="itemName">My Pets</h2>
+                <Link className="itemLink" to='/delegateService'>
+                    <h2 className="itemName">Delegations</h2>
                 </Link>
             </div>
             <div className="barSeparator">
@@ -22,15 +24,15 @@ export default function UserBar(){
             </div>
             <div className="barItem">
                 <img src={infoIcon} className="barItemIcon small" alt="infoIcon"/>
-                <Link className="itemLink" to='/aboutUs'>
-                    <h2 className="itemName">About Us</h2>
+                <Link className="itemLink" to='/proceduresView'>
+                    <h2 className="itemName">Approved Procedures</h2>
                 </Link>
             </div>
             <div className="barSeparator">
                 <img src={lineIcon} className="lineSeparator" alt="line"/>
             </div>
             <div className="userEmail">
-                <h3 className="itemName">{userContext.email}</h3>
+                <h3 className="itemName">{`${userContext.email} - ${userContext.userType} privileges`}</h3>
             </div>
         </div>
     );
