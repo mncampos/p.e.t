@@ -3,6 +3,9 @@ import "./ServicesHistory.css"
 import "../RegisterService/RegisterService.css"
 import pataIcon from '../../assets/pataIcon.png'
 import boneIcon from '../../assets/boneIcon.png'
+import ProceduresHistory from "../ProceduresHistory/ProceduresHistory";
+import PendingProcedures from "../ProceduresHistory/PendingProcedures";
+import {Link} from 'react-router-dom'
 
 export default function ServicesHistory(){
     return(
@@ -18,18 +21,14 @@ export default function ServicesHistory(){
 
                         <div className="petInfo2">
 
-                            <p><strong>Name:</strong> Ratata</p>
-                            <p><strong>Age:</strong> 12</p>
-                            <p><strong>Species:</strong> Unidentified</p>
-                            <p><strong>Weight:</strong> 1Kg</p>
-
                             {/* Dados do pet, sem ajuda do meu amor não consigo T.T */}
 
                         </div>
                     </div>
 
-                    <button className="petButton opaque">Voltar</button>
-
+                    <Link to='/myPets'>
+                    <button className="petButton opaque">Back</button>
+                    </Link>
                 </div>
 
                 <div>
@@ -45,9 +44,7 @@ export default function ServicesHistory(){
                 </div>
 
                 <div>
-                    Procedimentos Pendentes
-                    {/* Aqui vai ter q fazer uma função parecida com new pet para apresentar os serviços que ainda não foram realizados */}
-                    {/* O css do card de apresentação dos procedimentos ja está feito como aparece no botão "Historico de Procedimentos" em RegisterService */}
+                    {<PendingProcedures/>}
                 </div>
 
                 <div>
@@ -63,8 +60,7 @@ export default function ServicesHistory(){
                 </div>
 
                 <div>
-                    Procedimentos Realizados
-                    {/* Aqui vai ter q fazer uma função parecida com new pet para apresentar os serviços que ja foram realizados */}
+                    <ProceduresHistory/>
                 </div>
 
             </div>

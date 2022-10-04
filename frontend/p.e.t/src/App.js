@@ -17,6 +17,7 @@ import DelegateService from "./components/DelegateService/DelegateService";
 import EmployeeServices from "./components/EmployeeServices/EmployeeServices";
 import SubBar from "./components/NavigationBar/SubBar";
 import ProceduresView from "./components/ManagerProceduresView/ProceduresView";
+import ProceduresHistory from "./components/ProceduresHistory/ProceduresHistory";
 
 export const UserContext = createContext({});
 let isUserLoggedIn = false;
@@ -58,6 +59,7 @@ function App() {
         <Route path='/delegateService' element={ <EmployeeRoute><DelegateService/></EmployeeRoute>} />
         <Route path='/employeeServices' element={ <EmployeeRoute><EmployeeServices/></EmployeeRoute>} />
         <Route path='/proceduresView' element={ <EmployeeRoute><ProceduresView/></EmployeeRoute>} />
+        <Route path='/proceduresHistory' element={ <ProtectedRoute><ProceduresHistory/></ProtectedRoute>} />
       </Routes>
       <Footer/>
     </UserContext.Provider>
