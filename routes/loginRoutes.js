@@ -75,6 +75,14 @@ router.get("/getDelegatedProcedures", async (req, res) => {
     });
 });
 
+router.post("/getUserDelegatedProcedures", async (req, res) => {
+  const { name } = req.body;
+  procedureSchema.find({ownerName: name, procedureState: "Delegated"}).lean().exec(function(err,docs) {
+    if(!err)
+    return res.status(200).json(docs);
+  })
+})
+
 router.get("/getEmployees", async (req, res) => {
   userSchema
     .find({ userType: "Employee" })
@@ -109,10 +117,17 @@ router.post("/updateProcedure", async (req, res) => {
 router.post("/completeProcedure", async (req, res) => {
   const {_id } = req.body;
 
-  procedureSchema.findOneAndUpdate({_id: _id}, {procedureState: "Complete"}).exec(function(err,docs) {
+  procedureSchema.findOneAndUpdate({_id: _id}, {procedureState: "Complete", procedureEndDate: Date.now()}).exec(function(err,docs) {
     if (!err) return res.status(200).json({ msg: "Updated succesfully!"});
   })
 })
+
+router.post("/getCompletedProcedures", async (req, res) => {
+  const {name} = req.body;
+  procedureSchema.find({ownerName: name, procedureState: "Complete"}).lean().exec(function (err, docs) {
+    if (!err) return res.status(200).json(docs);
+  });
+});
 
 router.post("/getPets", async (req, res) => {
   const { owner } = req.body;
